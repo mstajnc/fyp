@@ -1,45 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.app')
+@section('heading', 'Test!')
+@section('content')
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut quam velit. Morbi et nibh quis tellus cursus fermentum. Aliquam nec lorem id nisi sagittis tincidunt. Proin et dapibus dolor. Nunc dictum, lectus sed pellentesque condimentum, odio dolor commodo erat, in semper nunc metus non dolor. Integer placerat imperdiet libero eget facilisis. Pellentesque faucibus, sapien dignissim egestas auctor, erat nibh vulputate eros, non porta massa est in nisl. Phasellus sagittis sed massa ornare maximus.
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+Suspendisse bibendum quis justo ut dapibus. Donec cursus tellus risus, et fermentum tellus pharetra id. Vivamus porta accumsan egestas. Nam fermentum dignissim ex et vehicula. Aliquam ultricies, tortor vel vehicula porttitor, felis lorem viverra ligula, at bibendum nisi quam eu orci. Aliquam erat volutpat. Pellentesque eu ipsum ultrices, eleifend sem sed, placerat erat. Pellentesque hendrerit nibh tincidunt blandit maximus. Etiam ac felis lorem. Fusce risus felis, ullamcorper sit amet placerat at, eleifend id neque. Sed dictum nibh eu ante tristique, eu imperdiet risus ornare.
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+Vivamus condimentum leo elit, in tempus ante convallis nec. Vestibulum sodales metus sed nunc tristique, sit amet lacinia magna elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis quam in tellus vehicula sagittis quis et mi. Duis eget nulla sit amet quam consequat hendrerit. Suspendisse ac nulla dolor. Aenean enim est, lobortis et blandit eu, congue ac erat. Praesent vitae eleifend lectus. Aliquam libero urna, ullamcorper eget eros non, tristique cursus dolor. Vestibulum purus tellus, faucibus vel ligula ac, porttitor cursus enim.
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+Nullam ultrices sapien vitae neque egestas, ut sagittis massa tincidunt. Praesent malesuada dui at aliquet dictum. Donec vitae sapien id dui semper tincidunt sed sit amet metus. Duis massa ante, pharetra eu interdum id, molestie at ante. Fusce a iaculis erat. Proin convallis tortor at nibh pretium aliquet. In semper quis nulla convallis auctor. Phasellus vehicula cursus ante, nec rutrum neque varius quis. Pellentesque ultricies urna quis nulla faucibus vulputate. Etiam fringilla interdum ante et lobortis.
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+Quisque suscipit nisi id blandit maximus. Maecenas placerat massa eu elit ultricies, sed varius mauris imperdiet. Vivamus ut ex id eros porttitor cursus id ut augue. Donec congue id felis eu elementum. Duis eu ullamcorper metus. Nullam dignissim eros id nulla congue tincidunt. Sed venenatis aliquam urna, at placerat enim lobortis sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam consequat turpis quis erat elementum, venenatis auctor nisi tincidunt. Curabitur semper ac nisl in gravida. Ut vehicula, odio suscipit porta volutpat, leo arcu finibus augue, at fermentum nunc urna in dui. Aliquam sagittis vel massa vitae luctus.
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+In sit amet ligula elit. Suspendisse fermentum et neque iaculis suscipit. Integer tempus, est sed sagittis porta, tortor quam pulvinar lorem, eu tristique ante nibh at nisi. Vestibulum tincidunt pretium scelerisque. Suspendisse potenti. Aliquam in hendrerit dui. Nullam nec ipsum at justo pulvinar pharetra. Integer quis dolor rhoncus, bibendum nisi eu, efficitur quam. Etiam non posuere odio. Aenean accumsan purus sed nulla lacinia, eu laoreet diam rutrum. In aliquet neque non ex tristique, vel commodo nibh feugiat. Mauris ultrices, sem quis suscipit iaculis, nulla massa imperdiet elit, at consequat velit nisi non turpis. Praesent a ante feugiat, consectetur orci ac, lacinia nisi. Fusce ultricies lacinia porta. Integer volutpat mattis turpis vitae gravida.
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+Sed eu justo sit amet justo feugiat mollis et ut diam. Pellentesque sit amet bibendum nisi, vitae posuere augue. Donec elementum fermentum nulla quis pellentesque. Duis nec tempor nibh. Vivamus faucibus purus est, ac malesuada nunc viverra eget. Phasellus sed aliquam metus, ut blandit dui. In eu vehicula dolor.
+
+Aliquam ac finibus leo, ut aliquam arcu. Vestibulum luctus, nisi ac ornare bibendum, diam diam porttitor magna, in suscipit odio enim ac arcu. Etiam diam nisi, lacinia vitae felis id, rhoncus elementum lacus. In elementum fermentum dolor, in mollis quam vulputate quis. Suspendisse efficitur posuere dui, sit amet dapibus dui pretium ut. Phasellus hendrerit magna augue, nec fringilla turpis ultrices vel. Morbi id risus at ligula rutrum placerat in nec nulla. Praesent pharetra erat eget eleifend condimentum. Praesent viverra velit enim, vel aliquam diam commodo nec. Aenean finibus justo non tortor ornare, ac consequat odio dictum. Phasellus id enim magna. Donec ornare purus eu rhoncus consequat. Morbi laoreet, dolor ac dapibus congue, nulla justo congue risus, a vestibulum eros metus varius mauris. Ut quam dui, faucibus ac mollis eu, scelerisque id lorem. Cras vel viverra nulla.
+
+Cras id elit luctus, aliquam sem et, volutpat sem. Sed eget odio felis. Sed imperdiet ligula in est eleifend, in pretium ligula tempus. Cras mollis, lectus non consectetur venenatis, turpis justo auctor diam, ut volutpat turpis justo sollicitudin lorem. Donec id ante vel justo dapibus fringilla in id nunc. In hac habitasse platea dictumst. In facilisis augue vel quam tempor, quis dignissim enim placerat. Pellentesque elit lectus, ultricies sit amet tortor vitae, consectetur tristique mi. Integer suscipit convallis magna quis dictum.
+
+Praesent a urna ac urna tincidunt facilisis. Nullam cursus commodo arcu. Quisque iaculis semper tellus, vitae commodo quam elementum interdum. Duis laoreet ut purus sit amet ultricies. Proin eleifend eleifend lorem quis aliquet. Praesent id tortor consequat, blandit tellus et, bibendum massa. Duis efficitur, turpis at aliquet mollis, nulla mauris dignissim tortor, sed tincidunt est tellus vitae neque. Pellentesque eget rhoncus quam.
+@endsection
