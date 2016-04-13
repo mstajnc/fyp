@@ -18,7 +18,7 @@ class TestController extends Controller
         //$users = \DB::collection('entries')->get();
         print_r("hello world");
 
-        $user = \DB::connection('mongodb')->collection('entries')->get();
+        $user = \DB::connection('mongodb')->collection('test')->get();
         return  $user;
         //return Test::all();
     }
