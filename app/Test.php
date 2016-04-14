@@ -2,12 +2,11 @@
 
 namespace App;
 
+use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-
-class Test extends Eloquent  {
+class Test extends Moloquent  {
 
     protected $connection = 'mongodb';
-     protected $collection = 'entries';
+    protected $collection = 'test';
 
 }
