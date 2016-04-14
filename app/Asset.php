@@ -2,9 +2,13 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
 
-class Asset extends Model
+class Asset extends Moloquent
 {
-    //
+	protected $fillable =  ['asset'];
+
+    protected $connection = 'mongodb';
+    protected $collection = 'assets';
+
 }
