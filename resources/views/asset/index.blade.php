@@ -4,8 +4,11 @@
     Available assets
     <table class="table table-striped task-table">
     @foreach($assets as $asset)
-              <tr><td class="table-text">{{$asset->_id}}
-              <td class="table-text">({{$asset->asset}}) </td></tr>
+              <tr>
+              <div><a href="/assets/{{$asset->_id}}">
+              {{$asset->_id}}
+              ({{$asset->asset}})</a> </div></td>
+              </tr>
     @endforeach
 
     </table>
