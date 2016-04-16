@@ -46,12 +46,12 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Manage assets<span class="caret"></span>
+                            Assets<span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/assets/create">Create an asset</a></li>
-                            <li><a href="/assets">Display assets</a></li>
+                            <li><a href="/assets">Manage assets</a></li>
                         </ul>
                     </li>
                     
@@ -59,23 +59,23 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Manage locations<span class="caret"></span>
+                            Locations<span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/locations/create">Create a location</a></li>
-                            <li><a href="/locations">Display locations</a></li>
+                            <li><a href="/locations">Manage locations</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Manage contacts<span class="caret"></span>
+                            Contacts<span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/contacts/create">Create a contact</a></li>
-                            <li><a href="/contacts">Display contacts</a></li>
+                            <li><a href="/contacts">Manage contacts</a></li>
                         </ul>
                     </li>
                     
