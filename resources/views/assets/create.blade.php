@@ -38,6 +38,25 @@
             </div>
         </div>
 
+        <div class="form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Contact</label>
+                <div class="col-md-6">
+                    <select  class="form-control" name="contact_id">
+                            <option value="">N/A</option>
+                    @foreach($contacts as $contact)
+                            <option value="{{$contact->id}}">{{$contact->name}} {{$contact->surname}}</option>
+                    @endforeach
+                    </select>
+                    @if ($errors->has('contact'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('contact') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
         
 
         <div class="form-group">
