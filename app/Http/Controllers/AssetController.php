@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Asset;
+use App\Location;
 
 class AssetController extends Controller
 {
@@ -28,7 +29,8 @@ class AssetController extends Controller
      */
     public function create()
     {
-        return view('assets.create');
+        $locations = Location::all();
+        return view('assets.create', compact('locations'));
     }
 
     /**
