@@ -49,9 +49,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Location $location)
     {
-        //
+        return view('locations.show', compact('location'));
     }
 
     /**
@@ -60,9 +60,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Location $location)
     {
-        //
+        return view('locations.edit', compact('location'));
     }
 
     /**
@@ -72,9 +72,11 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $location)
     {
-        //
+        $location = Location::where('id', $location)->first();
+        $location->update($request->all());
+        return back();
     }
 
     /**
@@ -83,8 +85,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($location)
     {
-        //
+        Location::findOrFail($location)->delete();
+        return redirect('/locations');
     }
 }
