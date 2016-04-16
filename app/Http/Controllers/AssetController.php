@@ -90,6 +90,6 @@ class AssetController extends Controller
     public function destroy($asset)
     {
         Asset::findOrFail($asset)->delete();
-        return back();
+        return redirect('/assets');
     }
 }

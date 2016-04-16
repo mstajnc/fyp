@@ -21,13 +21,11 @@
                             <button type="submit" class="btn btn-danger">
                                 <i class="fa fa-btn fa-exclamation-triangle"></i>Delete asset
                             </button>
-                            </div>
-                        </div>
                     </form>
                 </td>            
               </tr>
     @endforeach
 
     </table>
-
+    <a href="/assets/create"><button type="submit" class="btn btn-primary">Create asset</button></a>
 @endsection
