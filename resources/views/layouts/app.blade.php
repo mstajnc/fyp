@@ -42,10 +42,31 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="/assets/create">Create an asset</a></li>
-                    <li><a href="/assets">Display assets</a></li>
-                    <li><a href="/locations/create">Create a location</a></li>
-                    <li><a href="/locations">Display locations</a></li>
+                    
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Manage assets<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/assets/create">Create an asset</a></li>
+                            <li><a href="/assets">Display assets</a></li>
+                        </ul>
+                    </li>
+                    
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Manage locations<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/locations/create">Create a location</a></li>
+                            <li><a href="/locations">Display locations</a></li>
+                        </ul>
+                    </li>
                     
                 </ul>
 
