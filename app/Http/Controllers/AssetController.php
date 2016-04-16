@@ -17,7 +17,7 @@ class AssetController extends Controller
     public function index()
     {
         $assets = Asset::all();
-        return view('asset.index', compact('assets'));
+        return view('assets.index', compact('assets'));
 
     }
 
@@ -28,7 +28,7 @@ class AssetController extends Controller
      */
     public function create()
     {
-        return view('asset.create');
+        return view('assets.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class AssetController extends Controller
      */
     public function show(Asset $asset)
     {
-        return view('asset.show', compact('asset'));
+        return view('assets.show', compact('asset'));
 
     }
 
@@ -64,7 +64,7 @@ class AssetController extends Controller
      */
     public function edit(Asset $asset)
     {
-        return view('asset.edit', compact('asset'));
+        return view('assets.edit', compact('asset'));
     }
 
     /**

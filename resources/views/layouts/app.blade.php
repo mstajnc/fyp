@@ -44,6 +44,8 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="/assets/create">Create an asset</a></li>
                     <li><a href="/assets">Display assets</a></li>
+                    <li><a href="/locations/create">Create a location</a></li>
+                    <li><a href="/locations">Display locations</a></li>
                     
                 </ul>
 

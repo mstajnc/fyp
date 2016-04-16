@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Location;
 
 class LocationController extends Controller
 {
@@ -15,7 +16,8 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        $locations = Location::all();
+        return view('locations.index', compact('locations'));
     }
 
     /**
@@ -25,7 +27,7 @@ class LocationController extends Controller
      */
     public function create()
     {
-        //
+       return view('locations.create');
     }
 
     /**
@@ -36,7 +38,9 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $location = new Location($request->all());
+        $location->save();
+        return redirect('/locations');
     }
 
     /**
