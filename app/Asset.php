@@ -6,7 +6,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
 
 class Asset extends Moloquent
 {
-	protected $fillable =  ['asset', 'location'];
+	protected $fillable =  ['asset', 'location_id'];
 
     protected $connection = 'mongodb';
     protected $collection = 'assets';

@@ -22,9 +22,9 @@
 
         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
             <div class="form-group">
-                <label class="col-md-4 control-label">location</label>
+                <label class="col-md-4 control-label">Location</label>
                 <div class="col-md-6">
-                    <select  class="form-control" name="location">
+                    <select  class="form-control" name="location_id">
                     @foreach($locations as $location)
                             <option value="{{$location->id}}">{{$location->location}}</option>
                     @endforeach
