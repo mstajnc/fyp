@@ -77,7 +77,6 @@ class AssetController extends Controller
     public function update(Request $request, $asset)
     {
         $asset = Asset::where('_id', $asset)->first();
-
         $asset->update($request->all());
         return back();
     }
@@ -88,8 +87,9 @@ class AssetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($asset)
     {
-        //
+        Asset::findOrFail($asset)->delete();
+        return back();
     }
 }
