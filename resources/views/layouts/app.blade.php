@@ -67,6 +67,17 @@
                             <li><a href="/locations">Display locations</a></li>
                         </ul>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Manage contacts<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/contacts/create">Create a contact</a></li>
+                            <li><a href="/contacts">Display contacts</a></li>
+                        </ul>
+                    </li>
                     
                 </ul>
 
