@@ -46,4 +46,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::patch('/locations/edit/{location}', 'LocationController@update');
     Route::delete('/locations/{location}', 'LocationController@destroy');
 
+    Route::get('/contacts', 'ContactController@index');
+    Route::get('/contacts/create', 'ContactController@create');
+    Route::post('/contacts/store', 'ContactController@store');
+    Route::get('/contacts/{contact}', 'ContactController@show');
+    Route::get('/contacts/edit/{contact}', 'ContactController@edit');
+    Route::patch('/contacts/edit/{contact}', 'ContactController@update');
+    Route::delete('/contacts/{contact}', 'ContactController@destroy');
+
 });
