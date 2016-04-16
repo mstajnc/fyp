@@ -38,4 +38,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::patch('/assets/edit/{asset}', 'AssetController@update');
     Route::delete('/assets/{asset}', 'AssetController@destroy');
 
+    Route::get('/locations', 'LocationController@index');
+    Route::get('/locations/create', 'LocationController@create');
+    Route::post('/locations/store', 'LocationController@store');
+    Route::get('/locations/{location}', 'LocationController@show');
+    Route::get('/locations/edit/{location}', 'LocationController@edit');
+    Route::patch('/locations/edit/{location}', 'LocationController@update');
+    Route::delete('/locations/{location}', 'LocationController@destroy');
+
 });

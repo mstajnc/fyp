@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Asset;
+use App\Location;
 
-class AssetController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class AssetController extends Controller
      */
     public function index()
     {
-        $assets = Asset::all();
-        return view('assets.index', compact('assets'));
-
+        $locations = Location::all();
+        return view('locations.index', compact('locations'));
     }
 
     /**
@@ -28,7 +27,7 @@ class AssetController extends Controller
      */
     public function create()
     {
-        return view('assets.create');
+       return view('locations.create');
     }
 
     /**
@@ -39,9 +38,9 @@ class AssetController extends Controller
      */
     public function store(Request $request)
     {
-        $asset = new Asset($request->all());
-        $asset->save();
-        return redirect('/assets');
+        $location = new Location($request->all());
+        $location->save();
+        return redirect('/locations');
     }
 
     /**
@@ -50,10 +49,9 @@ class AssetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Asset $asset)
+    public function show(Location $location)
     {
-        return view('assets.show', compact('asset'));
-
+        return view('locations.show', compact('location'));
     }
 
     /**
@@ -62,9 +60,9 @@ class AssetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Asset $asset)
+    public function edit(Location $location)
     {
-        return view('assets.edit', compact('asset'));
+        return view('locations.edit', compact('location'));
     }
 
     /**
@@ -74,10 +72,10 @@ class AssetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $asset)
+    public function update(Request $request, $location)
     {
-        $asset = Asset::where('_id', $asset)->first();
-        $asset->update($request->all());
+        $location = Location::where('id', $location)->first();
+        $location->update($request->all());
         return back();
     }
 
@@ -87,9 +85,9 @@ class AssetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($asset)
+    public function destroy($location)
     {
-        Asset::findOrFail($asset)->delete();
-        return redirect('/assets');
+        Location::findOrFail($location)->delete();
+        return redirect('/locations');
     }
 }
