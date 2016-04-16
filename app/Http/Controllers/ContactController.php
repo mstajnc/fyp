@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Contact;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return view('contacts.index', compact('contacts'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+       return view('contacts.create');
     }
 
     /**
@@ -36,7 +38,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = new Contact($request->all());
+        $contact->save();
+        return redirect('/contacts');
     }
 
     /**
