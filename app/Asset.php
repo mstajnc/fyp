@@ -16,4 +16,14 @@ class Asset extends Moloquent
         return trim($contact_id) !== '' ? $contact_id : null;
     }
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
+
 }
