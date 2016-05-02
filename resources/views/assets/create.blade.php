@@ -6,7 +6,7 @@
     {{csrf_field()}}
         <div class="form-group{{ $errors->has('asset') ? ' has-error' : '' }}">
             <div class="form-group">
-                <label class="col-md-4 control-label">asset</label>
+                <label class="col-md-4 control-label">Asset name</label>
                 <div class="col-md-6">
                     <input type="text" class="form-control" name="asset" value="{{old('asset')}}">
 
@@ -18,6 +18,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Quantity</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="quantity" value="{{old('quantity')}}">
+
+                    @if ($errors->has('quantity'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('quantity') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
 
 
         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
