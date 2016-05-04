@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('heading', 'Update asset details')
+@section('heading', 'Update asset location')
 @section('content')
 
       <h3>Update asset location</h3>
