@@ -20,7 +20,6 @@ class AssetController extends Controller
     {
         $assets = Asset::all();
         return view('assets.index', compact('assets'));
-
     }
 
     /**
@@ -58,7 +57,6 @@ class AssetController extends Controller
     {
         $asset->load('location', 'contact')->get(); //to load details of given location and contact
         return view('assets.show', compact('asset'));
-
     }
 
     /**
@@ -96,5 +94,19 @@ class AssetController extends Controller
     {
         Asset::findOrFail($asset)->delete();
         return redirect('/assets');
+    }
+
+    public function location(Asset $asset)
+    {
+        $asset->load('location')->get();
+        $locations = Location::all();
+        return view('assets.location', compact('asset', 'locations'));
+    }
+
+    public function location_update(Request $request, $asset)
+    {
+        $asset = Asset::where('_id', $asset)->first();
+        $asset->update($request->all());
+        return back();
     }
 }
