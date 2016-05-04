@@ -7,6 +7,7 @@
               <div>
               <td>{{$asset->_id}}</td>
               <td>({{$asset->asset}})</td>
+              <td>({{$asset->quantity}})</td>
               <td>({{$asset->location->location}})</td>
               </div>
               </tr>
@@ -27,8 +28,8 @@
     </table>
 
     <div class="form-group">
-      <a href="/assets"><button type="submit" class="btn btn-primary">Display list of assets</button></a>
-      <a href="/assets/edit/{{$asset->_id}}"><button type="submit" class="btn btn-primary">Edit this asset</button></a>
+      <a href="/assets"><button class="btn btn-primary">Display list of assets</button></a>
+      <a href="/assets/edit/{{$asset->_id}}"><button class="btn btn-primary">Edit this asset</button></a>
       <form action="/assets/{{$asset->_id}}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
