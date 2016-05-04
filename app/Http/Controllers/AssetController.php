@@ -109,4 +109,18 @@ class AssetController extends Controller
         $asset->update($request->all());
         return back();
     }
+
+    public function contact(Asset $asset)
+    {
+        $asset->load('contact')->get();
+        $contacts = Contact::all();
+        return view('assets.contact', compact('asset', 'contacts'));
+    }
+
+    public function contact_update(Request $request, $asset)
+    {
+        $asset = Asset::where('_id', $asset)->first();
+        $asset->update($request->all());
+        return back();
+    }
 }
