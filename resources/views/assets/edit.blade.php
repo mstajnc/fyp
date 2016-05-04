@@ -50,7 +50,7 @@
           </div>
           
           <div class="form-group">
-              <label class="col-md-4 control-label">Contact (<a href="/assets/contact">Change contact</a>)</label>
+              <label class="col-md-4 control-label">Contact (<a href="/assets/contact/{{$asset->_id}}">Change contact</a>)</label>
               <div class="col-md-6">
                   <input type="text" class="form-control" name="contact" value="{{$asset->contact->name}} {{$asset->contact->surname}}" disabled> 
               </div>      
