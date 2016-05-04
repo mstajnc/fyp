@@ -6,9 +6,9 @@
               <tr>
               <div>
               <td>{{$asset->_id}}</td>
-              <td>({{$asset->asset}})</td>
-              <td>({{$asset->quantity}})</td>
-              <td>({{$asset->location->location}})</td>
+              <td>{{$asset->asset}}</td>
+              <td>{{$asset->quantity}}</td>
+              <td>{{$asset->location->location}}</td>
               </div>
               </tr>
               @if(empty($asset->contact->surname)) 
@@ -19,8 +19,7 @@
               @else
                 <tr><div>
                   <td>Responsible person</td>
-                  <td>{{$asset->contact->name}}</td>
-                  <td>{{$asset->contact->surname}}</td>
+                  <td>{{$asset->contact->name}} {{$asset->contact->surname}}</td>
                   <td>{{$asset->contact->email}}</td>
                   <td>{{$asset->contact->phone}}</td>
                 </div></tr>
@@ -30,6 +29,7 @@
     <div class="form-group">
       <a href="/assets"><button class="btn btn-primary">Display list of assets</button></a>
       <a href="/assets/edit/{{$asset->_id}}"><button class="btn btn-primary">Edit this asset</button></a>
+      <a href="/assets/location/{{$asset->_id}}"><button class="btn btn-primary">Change location</button></a>
       <form action="/assets/{{$asset->_id}}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
