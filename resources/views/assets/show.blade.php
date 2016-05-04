@@ -5,9 +5,25 @@
     <table class="table table-striped task-table">
               <tr>
               <div>
-              {{$asset->_id}}
-              ({{$asset->asset}})</div></td>
+              <td>{{$asset->_id}}</td>
+              <td>({{$asset->asset}})</td>
+              <td>({{$asset->location->location}})</td>
+              </div>
               </tr>
+              @if(empty($asset->contact->surname)) 
+                <tr><div>
+                <td>Responsible person</td>
+                <td>No responsible person has been assigned to this asset.</td>
+                </div></tr>
+              @else
+                <tr><div>
+                  <td>Responsible person</td>
+                  <td>{{$asset->contact->name}}</td>
+                  <td>{{$asset->contact->surname}}</td>
+                  <td>{{$asset->contact->email}}</td>
+                  <td>{{$asset->contact->phone}}</td>
+                </div></tr>
+              @endif
     </table>
 
     <div class="form-group">

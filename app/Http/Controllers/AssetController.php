@@ -56,6 +56,7 @@ class AssetController extends Controller
      */
     public function show(Asset $asset)
     {
+        $asset->load('location', 'contact')->get(); //to load details of given location and contact
         return view('assets.show', compact('asset'));
 
     }
