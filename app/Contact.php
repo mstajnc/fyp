@@ -8,4 +8,9 @@ class Contact extends Model
 {
     protected $connection = 'mysql';
     protected $fillable =  ['name', 'surname', 'email', 'phone'];
+
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
 }

@@ -37,6 +37,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/assets/edit/{asset}', 'AssetController@edit');
     Route::patch('/assets/edit/{asset}', 'AssetController@update');
     Route::delete('/assets/{asset}', 'AssetController@destroy');
+    Route::get('/assets/location/{asset}', 'AssetController@location');
+    Route::patch('/assets/location/{asset}', 'AssetController@location_update');
+    Route::get('/assets/contact/{asset}', 'AssetController@contact');
+    Route::patch('/assets/contact/{asset}', 'AssetController@contact_update');
 
     Route::get('/locations', 'LocationController@index');
     Route::get('/locations/create', 'LocationController@create');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Asset;
+use App\Location;
+use App\Contact;
 
 class AssetController extends Controller
 {
@@ -18,7 +20,6 @@ class AssetController extends Controller
     {
         $assets = Asset::all();
         return view('assets.index', compact('assets'));
-
     }
 
     /**
@@ -28,7 +29,9 @@ class AssetController extends Controller
      */
     public function create()
     {
-        return view('assets.create');
+        $locations = Location::all();
+        $contacts = Contact::all();
+        return view('assets.create', compact('locations'), compact('contacts'));
     }
 
     /**
@@ -52,8 +55,8 @@ class AssetController extends Controller
      */
     public function show(Asset $asset)
     {
+        $asset->load('location', 'contact')->get(); //to load details of given location and contact
         return view('assets.show', compact('asset'));
-
     }
 
     /**
@@ -91,5 +94,33 @@ class AssetController extends Controller
     {
         Asset::findOrFail($asset)->delete();
         return redirect('/assets');
+    }
+
+    public function location(Asset $asset)
+    {
+        $asset->load('location')->get();
+        $locations = Location::all();
+        return view('assets.location', compact('asset', 'locations'));
+    }
+
+    public function location_update(Request $request, $asset)
+    {
+        $asset = Asset::where('_id', $asset)->first();
+        $asset->update($request->all());
+        return back();
+    }
+
+    public function contact(Asset $asset)
+    {
+        $asset->load('contact')->get();
+        $contacts = Contact::all();
+        return view('assets.contact', compact('asset', 'contacts'));
+    }
+
+    public function contact_update(Request $request, $asset)
+    {
+        $asset = Asset::where('_id', $asset)->first();
+        $asset->update($request->all());
+        return back();
     }
 }
