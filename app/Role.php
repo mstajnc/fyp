@@ -13,6 +13,7 @@ class Role extends Model
     }
 
     // Helper method to grant the given permission to a role.
+    // to be used as $role->givePermissionTo($nameOfPermission);
     public function givePermissionTo(Permission $permission)
     {
         return $this->permissions()->save($permission);
