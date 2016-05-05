@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('password'),
+        ]);
+
         DB::table('locations')->insert([
             'location' => 'Moldgreen',
             'allowed_units' => '250', 
@@ -70,6 +76,11 @@ class DatabaseSeeder extends Seeder
             'label' => 'Assistant',
         ]);
 
+        DB::table('roles')->insert([
+            'name' => 'admin',
+            'label' => 'Admin',
+        ]);
+
         DB::table('permissions')->insert([
             'name' => 'manage_assets',
             'label' => 'Manage assets',
@@ -101,6 +112,21 @@ class DatabaseSeeder extends Seeder
             'role_id' => 2,
         ]);
 
+        DB::table('permission_role')->insert([
+            'permission_id' => 1,
+            'role_id' => 3,
+        ]);
+
+        DB::table('permission_role')->insert([
+            'permission_id' => 2,
+            'role_id' => 3,
+        ]);
+
+        DB::table('permission_role')->insert([
+            'permission_id' => 3,
+            'role_id' => 3,
+        ]);
+
 
         DB::table('role_user')->insert([
             'role_id' => 1,
@@ -110,6 +136,11 @@ class DatabaseSeeder extends Seeder
         DB::table('role_user')->insert([
             'role_id' => 2,
             'user_id' => 2,
+        ]);
+
+        DB::table('role_user')->insert([
+            'role_id' => 3,
+            'user_id' => 3,
         ]);
         // $this->call(UsersTableSeeder::class);
     }
