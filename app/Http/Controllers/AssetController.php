@@ -9,15 +9,20 @@ use App\Asset;
 use App\Location;
 use App\Contact;
 
+use Gate;
+
 class AssetController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $assets = Asset::all();
         return view('assets.index', compact('assets'));
     }
@@ -28,7 +33,10 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $locations = Location::all();
         $contacts = Contact::all();
         return view('assets.create', compact('locations'), compact('contacts'));
@@ -41,7 +49,10 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset = new Asset($request->all());
         $asset->save();
         return redirect('/assets');
@@ -54,7 +65,10 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Asset $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset->load('location', 'contact')->get(); //to load details of given location and contact
         return view('assets.show', compact('asset'));
     }
@@ -66,7 +80,10 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Asset $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         return view('assets.edit', compact('asset'));
     }
 
@@ -78,7 +95,10 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
         return back();
@@ -91,34 +111,49 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         Asset::findOrFail($asset)->delete();
         return redirect('/assets');
     }
 
     public function location(Asset $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset->load('location')->get();
         $locations = Location::all();
         return view('assets.location', compact('asset', 'locations'));
     }
 
     public function location_update(Request $request, $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
         return back();
     }
 
     public function contact(Asset $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset->load('contact')->get();
         $contacts = Contact::all();
         return view('assets.contact', compact('asset', 'contacts'));
     }
 
     public function contact_update(Request $request, $asset)
-    {
+    {   
+        if (Gate::denies('manage_assets')) {
+            return view('errors.permissions');
+        }
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
         return back();
