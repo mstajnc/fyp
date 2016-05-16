@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Location;
 
+use Gate;
+
 class LocationController extends Controller
 {
     /**
@@ -16,6 +18,9 @@ class LocationController extends Controller
      */
     public function index()
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         $locations = Location::all();
         return view('locations.index', compact('locations'));
     }
@@ -27,6 +32,9 @@ class LocationController extends Controller
      */
     public function create()
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
        return view('locations.create');
     }
 
@@ -38,6 +46,9 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         $location = new Location($request->all());
         $location->save();
         return redirect('/locations');
@@ -51,6 +62,9 @@ class LocationController extends Controller
      */
     public function show(Location $location)
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         return view('locations.show', compact('location'));
     }
 
@@ -62,6 +76,9 @@ class LocationController extends Controller
      */
     public function edit(Location $location)
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         return view('locations.edit', compact('location'));
     }
 
@@ -74,6 +91,9 @@ class LocationController extends Controller
      */
     public function update(Request $request, $location)
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         $location = Location::where('id', $location)->first();
         $location->update($request->all());
         return back();
@@ -87,6 +107,9 @@ class LocationController extends Controller
      */
     public function destroy($location)
     {
+        if (Gate::denies('manage_locations')) {
+            return view('errors.permissions');
+        }
         Location::findOrFail($location)->delete();
         return redirect('/locations');
     }
