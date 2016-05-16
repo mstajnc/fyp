@@ -43,7 +43,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
                     
-
+                    @can('manage_assets')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Assets<span class="caret"></span>
@@ -54,9 +54,9 @@
                             <li><a href="/assets">Manage assets</a></li>
                         </ul>
                     </li>
-                    
+                    @endcan
 
-
+                    @can('manage_locations')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Locations<span class="caret"></span>
@@ -67,7 +67,9 @@
                             <li><a href="/locations">Manage locations</a></li>
                         </ul>
                     </li>
+                    @endcan
 
+                    @can('manage_contacts')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Contacts<span class="caret"></span>
@@ -78,15 +80,15 @@
                             <li><a href="/contacts">Manage contacts</a></li>
                         </ul>
                     </li>
-                    
+                    @endcan
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

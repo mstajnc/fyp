@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Contact;
 
+use Gate;
+
+
 class ContactController extends Controller
 {
     /**
@@ -16,6 +19,9 @@ class ContactController extends Controller
      */
     public function index()
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         $contacts = Contact::all();
         return view('contacts.index', compact('contacts'));
     }
@@ -27,6 +33,9 @@ class ContactController extends Controller
      */
     public function create()
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
        return view('contacts.create');
     }
 
@@ -38,6 +47,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         $contact = new Contact($request->all());
         $contact->save();
         return redirect('/contacts');
@@ -51,6 +63,9 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         return view('contacts.show', compact('contact'));
     }
 
@@ -62,6 +77,9 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         return view('contacts.edit', compact('contact'));
     }
 
@@ -74,6 +92,9 @@ class ContactController extends Controller
      */
     public function update(Request $request, $contact)
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         $contact = Contact::where('id', $contact)->first();
         $contact->update($request->all());
         return back();
@@ -87,6 +108,9 @@ class ContactController extends Controller
      */
     public function destroy($contact)
     {
+        if (Gate::denies('manage_contacts')) {
+            return view('errors.permissions');
+        }
         Contact::findOrFail($contact)->delete();
         return redirect('/contacts');
     }
