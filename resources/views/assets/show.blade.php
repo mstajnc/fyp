@@ -7,7 +7,7 @@
               <div>
               <td>{{$asset->_id}}</td>
               <td>{{$asset->asset}}</td>
-              <td>{{$asset->quantity}}</td>
+              <td>{{$asset->quantity}} items</td>
               <td>{{$asset->location->location}}</td>
               </div>
               </tr>

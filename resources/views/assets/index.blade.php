@@ -5,12 +5,12 @@
     <table class="table table-striped task-table">
     @foreach($assets as $asset)
               <tr>
-              <td><div>
+              <td><div><a href="/assets/{{$asset->_id}}">
               {{$asset->_id}}
-              ({{$asset->asset}})</div>
+              {{$asset->asset}}</a></div>
               </td>
 
-              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/assets/{{$asset->_id}}"><button type="submit" class="btn btn-primary">Update asset</button></a></div>
+              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/assets/edit/{{$asset->_id}}"><button type="submit" class="btn btn-primary">Update asset</button></a></div>
                         </div></td>
 
 				<td>
