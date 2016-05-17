@@ -6,7 +6,7 @@
               <tr>
               <div>
               {{$location->id}}
-              ({{$location->location}})({{$location->allowed_units}})</div></td>
+              {{$location->location}} ({{$location->allowed_units}})</div></td>
               </tr>
     </table>
 

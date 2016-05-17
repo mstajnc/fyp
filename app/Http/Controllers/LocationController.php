@@ -98,9 +98,13 @@ class LocationController extends Controller
         if (Gate::denies('manage_locations')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'location' => 'required|max:255',
+            'allowed_units' => 'required|numeric',
+            ]);
         $location = Location::where('id', $location)->first();
         $location->update($request->all());
-        return back();
+        return view('locations.show', compact('location'));
     }
 
     /**
