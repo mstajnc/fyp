@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     
                     @can('manage_assets')
                     <li class="dropdown">
@@ -106,7 +106,7 @@
     </nav>
 
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 60px;">
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
@@ -119,9 +119,17 @@
                 </div>
             </div>
         </div>
-
     </div>
 
+    <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-right">© 2016 - Martin Stajnc u1276060
+      </p>
+    </div>
+    
+    
+  </div>
+    
    
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
