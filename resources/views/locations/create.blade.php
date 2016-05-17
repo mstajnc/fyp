@@ -16,8 +16,11 @@
                             </span>
                         @endif
                     </div>
+                </div>
+            </div>
 
-
+            <div class="form-group{{ $errors->has('allowed_units') ? ' has-error' : '' }}">
+                <div class="form-group">
                     <label class="col-md-4 control-label">Number of allowed units</label>
                     <div class="col-md-2">
                         <input type="number" value=500 step=50 class="form-control" name="allowed_units" value="{{old('allowed_units')}}">
@@ -43,10 +46,13 @@
 
     </form>
     @if (count($errors))
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">  
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+    </div></div>
     @endif
 @endsection

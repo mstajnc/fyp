@@ -49,6 +49,10 @@ class LocationController extends Controller
         if (Gate::denies('manage_locations')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'location' => 'required|max:255',
+            'allowed_units' => 'required|numeric',
+            ]);
         $location = new Location($request->all());
         $location->save();
         return redirect('/locations');

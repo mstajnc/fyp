@@ -12,7 +12,7 @@
 
     <div class="form-group">
       <a href="/locations"><button type="submit" class="btn btn-primary">Display list of locations</button></a>
-      <a href="/locations/edit/{{$location->id}}"><button type="submit" class="btn btn-primary">Edit this location</button></a>
+      <a href="/locations/edit/{{$location->id}}"><button type="submit" class="btn btn-primary">Update this location</button></a>
       <form action="/locations/{{$location->id}}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}

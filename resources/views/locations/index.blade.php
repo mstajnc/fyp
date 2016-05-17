@@ -6,11 +6,11 @@
     @foreach($locations as $location)
               <tr>
               <td><div>
-              {{$location->id}}
-              ({{$location->location}})({{$location->allowed_units}})</div>
+              {{$location->id}}) 
+               <a href="/locations/{{$location->id}}">{{$location->location}} ({{$location->allowed_units}} allowed units)</a></div>
               </td>
 
-              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/locations/{{$location->id}}"><button type="submit" class="btn btn-primary">Update location</button></a></div>
+              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/locations/edit/{{$location->id}}"><button type="submit" class="btn btn-primary">Update location</button></a></div>
                         </div></td>
 
 				<td>
