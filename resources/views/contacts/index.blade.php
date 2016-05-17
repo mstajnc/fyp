@@ -6,11 +6,11 @@
     @foreach($contacts as $contact)
               <tr>
               <td><div>
-              {{$contact->id}}
-              ({{$contact->name}})({{$contact->surname}})</div>
+              {{$contact->id}})
+              <a href="/contacts/{{$contact->id}}">{{$contact->name}} {{$contact->surname}}</a></div>
               </td>
 
-              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/contacts/{{$contact->id}}"><button type="submit" class="btn btn-primary">Update a contact</button></a></div>
+              <td><div class="form-group"><div class="col-md-5 col-md-offset-5"><a href="/contacts/edit/{{$contact->id}}"><button type="submit" class="btn btn-primary">Update a contact</button></a></div>
                         </div></td>
 
 				<td>

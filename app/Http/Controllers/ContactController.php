@@ -50,6 +50,12 @@ class ContactController extends Controller
         if (Gate::denies('manage_contacts')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'numeric',
+            ]);
         $contact = new Contact($request->all());
         $contact->save();
         return redirect('/contacts');
@@ -95,9 +101,15 @@ class ContactController extends Controller
         if (Gate::denies('manage_contacts')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'numeric',
+            ]);
         $contact = Contact::where('id', $contact)->first();
         $contact->update($request->all());
-        return back();
+        return view('contacts.show', compact('contact'));
     }
 
     /**

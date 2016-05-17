@@ -16,7 +16,10 @@
                             </span>
                         @endif
                     </div>
-
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
+                <div class="form-group">
                     <label class="col-md-4 control-label">Surname</label>
                     <div class="col-md-6">
                         <input type="text" class="form-control" name="surname" value="{{old('surname')}}">
@@ -27,7 +30,11 @@
                             </span>
                         @endif
                     </div>
+                    </div>
+            </div>
 
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <div class="form-group">
                     <label class="col-md-4 control-label">Email</label>
                     <div class="col-md-6">
                         <input type="email" class="form-control" name="email" value="{{old('email')}}">
@@ -38,7 +45,11 @@
                             </span>
                         @endif
                     </div>
+                    </div>
+            </div>
 
+            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                <div class="form-group">
                     <label class="col-md-4 control-label">Phone</label>
                     <div class="col-md-6">
                         <input type="text" class="form-control" name="phone" value="{{old('phone')}}">
@@ -65,10 +76,13 @@
 
     </form>
     @if (count($errors))
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">  
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+    </div></div>
     @endif
 @endsection
