@@ -23,7 +23,7 @@
 |
 */
 
-Route::group(['middleware' => 'web'], function () {
+
     Route::auth();
     Route::get('/', function () {return view('welcome');});
     
@@ -58,4 +58,4 @@ Route::group(['middleware' => 'web'], function () {
     Route::patch('/contacts/edit/{contact}', 'ContactController@update');
     Route::delete('/contacts/{contact}', 'ContactController@destroy');
 
-});
+
