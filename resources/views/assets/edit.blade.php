@@ -39,7 +39,7 @@
           <div class="form-group">
               <label class="col-md-4 control-label">Quantity</label>
               <div class="col-md-6">
-                  <input type="text" class="form-control" name="quantity" value="{{$asset->quantity}}">
+                  <input type="number" class="form-control" name="quantity" value="{{$asset->quantity}}">
               </div>
           </div>
           <div class="form-group">

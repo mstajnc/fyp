@@ -104,6 +104,10 @@ class AssetController extends Controller
         if (Gate::denies('manage_assets')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'asset' => 'required|max:255',
+            'quantity' => 'required|numeric|max:80',
+            ]);
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
         return back();
