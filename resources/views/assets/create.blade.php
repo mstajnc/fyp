@@ -83,11 +83,15 @@
                         </div>
                     </div>
     </form>
+     
     @if (count($errors))
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">  
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+    </div></div>
     @endif
 @endsection

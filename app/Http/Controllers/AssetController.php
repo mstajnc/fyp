@@ -10,6 +10,7 @@ use App\Location;
 use App\Contact;
 
 use Gate;
+use Validator;
 
 class AssetController extends Controller
 {
@@ -53,6 +54,10 @@ class AssetController extends Controller
         if (Gate::denies('manage_assets')) {
             return view('errors.permissions');
         }
+        $this->validate($request, [
+            'asset' => 'required|max:255',
+            'quantity' => 'required|numeric|max:80',
+            ]);
         $asset = new Asset($request->all());
         $asset->save();
         return redirect('/assets');
