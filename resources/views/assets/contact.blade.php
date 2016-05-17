@@ -11,12 +11,19 @@
               <td>{{$asset->quantity}}</td>
               </div>
               </tr>
+              @if(empty($asset->contact->surname)) 
+                <tr><div>
+                <td>Responsible person</td>
+                <td>No responsible person has been assigned to this asset.</td>
+                </div></tr>
+              @else
               <tr><div>
                   <td>Responsible person</td>
                   <td>{{$asset->contact->name}} {{$asset->contact->surname}}</td>
                   <td>{{$asset->contact->email}}</td>
                   <td>{{$asset->contact->phone}}</td>
             	</div></tr>
+              @endif
     </table>
   <form method="POST" action="/assets/contact/{{$asset->_id}}">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -25,6 +32,7 @@
                 <label class="col-md-4 control-label">Contact</label>
                 <div class="col-md-6">
                     <select  class="form-control" name="contact_id">
+                            <option value="">N/A</option>
                     @foreach($contacts as $contact)
                             <option value="{{$contact->id}}">{{$contact->name}} {{$contact->surname}}</option>
                     @endforeach
