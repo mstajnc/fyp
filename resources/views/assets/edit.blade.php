@@ -52,7 +52,11 @@
           <div class="form-group">
               <label class="col-md-4 control-label">Contact (<a href="/assets/contact/{{$asset->_id}}">Change contact</a>)</label>
               <div class="col-md-6">
-                  <input type="text" class="form-control" name="contact" value="{{$asset->contact->name}} {{$asset->contact->surname}}" disabled> 
+              @if(empty($asset->contact->surname)) 
+                  <input type="text" class="form-control" name="contact" value="No responsible person has been assigned to this asset." disabled> 
+              @else
+                <input type="text" class="form-control" name="contact" value="{{$asset->contact->name}} {{$asset->contact->surname}}" disabled> 
+              @endif
               </div>      
           </div>
       <div class="form-group">
