@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
 
+
+
         /*
          * Application Service Providers...
          */
@@ -156,6 +158,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
 
     ],
 
