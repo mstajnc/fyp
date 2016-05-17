@@ -30,12 +30,14 @@ class AuthServiceProvider extends ServiceProvider
 
         /* FOLLOWING LOOP HAS TO BE COMMENTED IN ORDER TO RUN MIGRATIONS SUCCESFULLY */
         /* COMMENT FROM HERE */
+
        foreach ($this->getPermissions() as $permission) 
         {
             $gate->define($permission->name, function ($user) use ($permission){
                 return $user->hasRole($permission->roles);
             });
         }
+        
         /* END OF COMMENT, SORRY ABOUT THAT */
     }
 
