@@ -56,7 +56,7 @@ class AssetController extends Controller
         }
         $this->validate($request, [
             'asset' => 'required|max:255',
-            'quantity' => 'required|numeric|max:80',
+            'quantity' => 'required|numeric',
             ]);
         $asset = new Asset($request->all());
         $asset->save();
@@ -106,7 +106,7 @@ class AssetController extends Controller
         }
         $this->validate($request, [
             'asset' => 'required|max:255',
-            'quantity' => 'required|numeric|max:80',
+            'quantity' => 'required|numeric',
             ]);
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
@@ -145,7 +145,7 @@ class AssetController extends Controller
         }
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
-        return back();
+        return view('assets.edit', compact('asset'));
     }
 
     public function contact(Asset $asset)
@@ -165,6 +165,6 @@ class AssetController extends Controller
         }
         $asset = Asset::where('_id', $asset)->first();
         $asset->update($request->all());
-        return back();
+        return view('assets.edit', compact('asset'));
     }
 }
