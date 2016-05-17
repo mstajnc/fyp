@@ -1,17 +1,8 @@
 @extends('layouts.app')
-
+@section('heading', 'Inventory Management System')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+   <p>Welcome to the Inventory Management System website.</p>
+   <p>This website was built as a part of final year project.</p>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+   @piechart('Storage space', 'units-div', true)
 @endsection
